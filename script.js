@@ -2,6 +2,8 @@
 let searchFilm = document.getElementById('searchFilm');
 let btnSearch = document.getElementById('btnSearch');
 let film;
+let titles = '';
+
 
 //let year;
 
@@ -26,37 +28,37 @@ function validateFilmInput(){
 let filmInput = validateFilmInput();
 
 //Api request
-/*async function apiRequest() {
+async function apiRequest() {
     try {
         const response =  await fetch(`https://imdb-api.com/API/Top250Movies/k_0m51kds1`);
         const data = await response.json();
         let filmApiRequest = data.items;
-        
-        console.log(filmApiRequest);
-        console.log(typeof(filmApiRequest));
-
-
+        let title = '';
+   
         for (let i = 0; i < filmApiRequest.length; i++) {
-            console.log(title += filmApiRequest[i].title); 
-            console.log(typeof(title));
-            titleArr = title.split(',');
-            console.log(titleArr);
+                console.log(title += filmApiRequest[i].fullTitle + ',');
         };
 
+        titles = title.split(',');
+        console.log(typeof(titles));
+
+        let fullTitleList = Object.values(titles);
+        console.log(fullTitleList);
+        console.log(typeof(fullTitleList));
         
     }
     catch (error){
-        console.log('error');
+        console.log('La película ingresada no coincide con nuestra base de datos');
     }
-};*/
+}
 
-function apiRequest(){
+/*function apiRequest(){
     fetch('https://imdb-api.com/en/API/SearchTitle/git k_0m51kds1')
      .catch(error => console.log(error))
       .then(response => response.json())
       .then(data => console.log(data));
       
-}
+}*/
 
 
 function inputAndApiInfoValidation(){
